@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { HiInformationCircle } from "react-icons/hi2";
+import MyButton from "./components/my-button";
 
-function App() {
+const App: React.FC = () => {
+  const log = () => {
+    console.log("testing button");
+    
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    
+    <div className="flex items-center justify-center h-screen bg-gray-100">
+      <MyButton
+        label="Button Saya"
+        iconPosition="right"
+        tooltip="Tooltip"
+        tooltipPosition="right"
+        icon={<HiInformationCircle/>}
+        size="small"
+        textColor="#000"
+        iconColor="#000"
+        gradientDirection="to top"
+        tooltipMode="dark"
+        onClick={log}
+      />
     </div>
   );
-}
+};
 
 export default App;
